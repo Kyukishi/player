@@ -1,0 +1,21 @@
+body {
+    --scrollcolor: var(--systemGray6) var(--systemGray4);
+    color: var(--text);
+}
+
+#videohost {
+    height: 80%;
+    width: 75%;
+    margin-left: 10px;
+    margin-top: 10px;
+    position: absolute;
+    left: 0;
+}
+
+#bar-right {
+    height: 100%;
+    width: calc(25% - 10px);
+    position: absolute;
+    right: 0;
+    border-left: 1px solid var(--systemGray6);
+}

@@ -1,0 +1,93 @@
+---
+layout: watch
+---
+
+<!---------styles--------->
+<!--imports-->
+<link rel="stylesheet" href="/Web/css/bootstrap.min.css">
+<link rel="stylesheet" href="/Web/css/colors.css">
+<!--page style-->
+<style>
+    body{
+        background-color: var(--systemGray6);
+        width: 100%;
+        height: 100%;
+        color: var(--text);
+        overflow-x: hidden;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .videoPlayer{
+        width: 100%;
+        height: 100vh;
+    }
+
+    .link{
+        color: var(--systemBlue);
+    }
+</style>
+
+
+<!---------dom--------->
+<html>
+    <body>
+        <div class="videoPlayer"></div>
+        <div class="footer">
+            <span>Made by Kyukishi, visit </span><a class="link" href="https://kyukishi.github.io" target="_blank">kyukishi.github.io</a><span> for more Information</span>
+        </div>
+    </body>
+</html>
+
+
+<!---------scripts--------->
+<!--imports-->
+<script type="text/javascript" src="/Web/js/jquery.min.js"></script>
+<script type="text/javascript" src="/Web/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/Web/js/popper.min.js"></script>
+<script type="text/javascript" src="/Web/js/artplayer.js"></script>
+<!--page script-->
+<script type="text/javascript">
+    var art = new Artplayer({
+        container: '.videoPlayer',
+        url: 'https://node--olivia.vivo.sx/vod/ZWIigRExGEcnvQd-lqgX1Q/1610052532/0000089839',
+        title: 'Watch Zero.no.Tsukaima.S04E12.GerSub.WebRip.x264.mp4',
+        isLive: false,
+        muted: false,
+        autoplay: false,
+        pip: false,
+        autoSize: false,
+        autoMini: false,
+        screenshot: true,
+        setting: true,
+        loop: false,
+        flip: true,
+        rotate: true,
+        playbackRate: true,
+        aspectRatio: true,
+        fullscreen: true,
+        fullscreenWeb: false,
+        subtitleOffset: true,
+        miniProgressBar: false,
+        localVideo: false,
+        localSubtitle: true,
+        networkMonitor: true,
+        mutex: true,
+        light: true,
+        backdrop: true,
+        theme: '#00B3FF',
+        lang: navigator.language.toLowerCase(),
+        moreVideoAttr: {
+            crossOrigin: 'anonymous',
+        },
+        icons: {
+            loading: '<img src="/assets/img/ploading.gif">',
+            state: '<img src="https://vivo.sx/assets/images/logo_small.png">',
+        },
+    });
+</script>

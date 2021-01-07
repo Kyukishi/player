@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <header>
+        {% include header.html %}
+    </header>
+    <body>
+        <div id="pagecontent">
+            {% include preloader.html %}
+            {{ content }}
+        </div>
+    </body>
+</html>
+
+<style>
+    #pagecontent {
+        width: 100%;
+        position: fixed;
+        top: 54px;
+        bottom: 0;
+        overflow: auto;
+        padding: 0px;
+        scrollbar-color: var(--scrollcolor);
+    }
+</style>

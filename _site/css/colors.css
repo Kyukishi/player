@@ -1,0 +1,41 @@
+:root{
+    --systemGray: rgb(142, 142, 147);
+    --systemGray2: rgb(174, 174, 178);
+    --systemGray3: rgb(199, 199, 204);
+    --systemGray4: rgb(209, 209, 214);
+    --systemGray5: rgb(229, 229, 234);
+    --systemGray6: rgb(242, 242, 247);
+
+    --systemGrayLight: rgb(142, 142, 147);
+    --systemGrayLight2: rgb(174, 174, 178);
+    --systemGrayLight3: rgb(199, 199, 204);
+    --systemGrayLight4: rgb(209, 209, 214);
+    --systemGrayLight5: rgb(229, 229, 234);
+    --systemGrayLight6: rgb(242, 242, 247);
+
+    --systemGrayDark: rgb(142, 142, 147);
+    --systemGrayDark2: rgb(99, 99, 102);
+    --systemGrayDark3: rgb(72, 72, 74);
+    --systemGrayDark4: rgb(58, 58, 60);
+    --systemGrayDark5: rgb(44, 44, 46);
+    --systemGrayDark6: rgb(28, 28, 30);
+
+
+    --text: #000000;
+}
+
+.dark-mode, .dark-mode *{
+    --systemGray: rgb(142, 142, 147);
+    --systemGray2: rgb(99, 99, 102);
+    --systemGray3: rgb(72, 72, 74);
+    --systemGray4: rgb(58, 58, 60);
+    --systemGray5: rgb(44, 44, 46);
+    --systemGray6: rgb(28, 28, 30);
+
+
+    --text: #ffffff;
+}
+
+.dark-mode .icon {
+    filter:invert(100%);
+}

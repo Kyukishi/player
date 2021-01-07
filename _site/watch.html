@@ -1,0 +1,546 @@
+<!doctype html>
+<html>
+    <header>
+        <head>
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/colors.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/scrollreveal.js"></script>
+        <script src="/collection.js"></script>
+        <style>
+            @font-face {
+                font-family: ArialUnicodeMS;
+                src: url(/font/ArialUnicodeMS.ttf);
+            }
+
+            body {
+                font-family: ArialUnicodeMS;
+                background-color: var(--systemGray5);
+            }
+
+            img {
+                -khtml-user-select: none;
+                -o-user-select: none;
+                -moz-user-select: none; 
+                -webkit-user-select: none;
+                user-select: none;
+                pointer-events: none;
+            }
+        </style>
+        <script>
+            document.body.classList.add("dark-mode");
+
+            (function($){
+                $(document).on('contextmenu', 'img', function() {
+                    return false;
+                })
+            })(jQuery);
+        </script>
+</head>
+<header>
+    <nav style="background-color: var(--systemGray6); border-bottom: 1px solid #191919; color: var(--text);" class="navbar navbar-expand-sm fixed-top">
+        <!-- Brand -->
+        <a class="navbar-brand" href="/" style="color: var(--text);">Murloc's Stream</a>
+      
+        
+        <ul class="navbar-nav">
+            <!-- Links 
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+            </li>
+        -->
+      
+          <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" style="color: var(--text);">
+                    Genre
+                </a>
+                <div class="dropdown-menu">
+                    <!--<a class="dropdown-item" href="/mods/lol/megumin/"></a>-->
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <form class="form-inline" action="/action_page.php">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-success" type="submit">Search</button>
+              </form>
+        </ul>
+    </nav> 
+</header>
+    </header>
+    <body>
+        <div id="pagecontent">
+            <div id="preloaderContainer">
+    <div id="preloaderContainer2">
+        <div class="loaderSpinner">
+    <div class="loaderSpinnerBar1"></div>
+    <div class="loaderSpinnerBar2"></div>
+    <div class="loaderSpinnerBar3"></div>
+    <div class="loaderSpinnerBar4"></div>
+    <div class="loaderSpinnerBar5"></div>
+    <div class="loaderSpinnerBar6"></div>
+    <div class="loaderSpinnerBar7"></div>
+    <div class="loaderSpinnerBar8"></div>
+    <div class="loaderSpinnerBar9"></div>
+    <div class="loaderSpinnerBar10"></div>
+    <div class="loaderSpinnerBar11"></div>
+    <div class="loaderSpinnerBar12"></div>
+</div>
+
+<style>
+    div.loaderSpinner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+    }
+
+    div.loaderSpinner div {
+        width: 6%;
+        height: 16%;
+        background: var(--text);
+        position: absolute;
+        left: 49%;
+        top: 43%;
+        opacity: 0;
+        border-radius: 50px;
+        box-shadow: 0 0 3px rgba(0,0,0,0.2);
+        animation: fade 1s linear infinite;
+        -webkit-border-radius: 50px;
+        -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.2);
+        -webkit-animation: fade 1s linear infinite;
+    }
+
+    @keyframes fade {
+        from {opacity: 1;}
+        to {opacity: 0.25;}
+    }
+
+    div.loaderSpinner div.loaderSpinnerBar1 {
+        transform: rotate(0deg) translate(0, -130%);
+        animation-delay: 0s;
+        -webkit-transform:rotate(0deg) translate(0, -130%);
+        -webkit-animation-delay: 0s;
+    }    
+
+    div.loaderSpinner div.loaderSpinnerBar2 {
+        transform: rotate(30deg) translate(0, -130%);
+        animation-delay: -0.9167s;
+        -webkit-transform:rotate(30deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.9167s;
+    }
+
+    div.loaderSpinner div.loaderSpinnerBar3 {
+        transform: rotate(60deg) translate(0, -130%);
+        animation-delay: -0.833s;
+        -webkit-transform:rotate(60deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.833s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar4 {
+        transform: rotate(90deg) translate(0, -130%);
+        animation-delay: -0.7497s;
+        -webkit-transform:rotate(90deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.7497s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar5 {
+        transform: rotate(120deg) translate(0, -130%);
+        animation-delay: -0.667s;
+        -webkit-transform:rotate(120deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.667s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar6 {
+        transform: rotate(150deg) translate(0, -130%);
+        animation-delay: -0.5837s;
+        -webkit-transform:rotate(150deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.5837s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar7 {
+        transform: rotate(180deg) translate(0, -130%);
+        animation-delay: -0.5s;
+        -webkit-transform:rotate(180deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.5s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar8 {
+        transform: rotate(210deg) translate(0, -130%);
+        animation-delay: -0.4167s;
+        -webkit-transform:rotate(210deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.4167s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar9 {
+        transform: rotate(240deg) translate(0, -130%); 
+        animation-delay: -0.333s;
+        -webkit-transform:rotate(240deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.333s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar10 {
+        transform:rotate(270deg) translate(0, -130%); 
+        animation-delay: -0.2497s;
+        -webkit-transform:rotate(270deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.2497s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar11 {
+        transform:rotate(300deg) translate(0, -130%); 
+        animation-delay: -0.167s;
+        -webkit-transform:rotate(300deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.167s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar12 {
+        transform:rotate(330deg) translate(0, -130%); 
+        animation-delay: -0.0833s;
+        -webkit-transform:rotate(330deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.0833s;
+    }
+</style>
+    </div>
+    <span>Loading...</span>
+</div>
+
+<style>
+
+    #preloaderContainer {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background-color: var(--systemGray6);
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 98;
+        overflow: hidden;
+        color: var(--text);
+    }
+
+    #preloaderContainer2 {
+        width: 54px;
+        height: 54px;
+        position: relative;
+    }
+</style>
+
+<script>
+    $(window).on("load",function(){
+        $("#preloaderContainer").fadeOut("slow");
+    }); 
+</script>
+            <html>
+    <body>
+        <div id=videohost>
+            <style>
+    .videoPlayer {
+        height: 100%;
+        width: 100%;
+        background-color: #000000;
+        position: relative;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        --ProgressbarHeight: 5px;
+        --accentColor: #3390B9;
+        --subTranslateY: ;
+    }
+
+    .videoPlayer:hover .videoOver{
+        height: calc(100% - 45px);
+    }
+
+    .videoPlayer:hover .videoControls{
+        transform: translateY(0);
+    }
+
+    .videoContainer {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .video {
+        display: table;
+        margin: 0 auto;
+        outline: none;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .vBigbutton{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .vBigbutton button{
+        display: block;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 0;
+        outline: 0;
+        background-color: var(--accentColor);
+        height: 70px;
+        width: 70px;
+    }
+
+    .videoOver{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        transition: all 0.2s;
+    }
+
+    .vSub{
+        color: #ffffff;
+        position: relative;
+    }
+
+    .videoControls {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        flex-wrap: wrap;
+        transform: translateY(100%);
+        transition: all 0.2s;
+    }
+
+    .vProgress {
+        height: 5px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.4);
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .vProgress:hover .vProgressbar{
+        height: 8px;
+    }
+
+    .vProgress:hover .vScrubber{
+        width: 14px;
+        height: 14px;
+    }
+
+    .vProgressbarLoaded{
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.6);
+        position: absolute;
+    }
+
+    .vProgressbar {
+        height: 100%;
+        background-color: var(--accentColor);
+        position: absolute;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+    }
+
+    .vScrubber {
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background-color: var(--accentColor);
+        right: -7px;
+        position: absolute;
+    }
+
+    .vButtons{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .vButtons * {
+        float:left; 
+        display:inline;
+        color: #ffffff;
+    }
+
+    .vButtons button {
+        background: none;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        height: 40px;
+        display: inline-block;
+    }
+
+    .vButtons div{
+        font-size: 13px;
+    }
+</style>
+
+<div class="videoPlayer">
+    <div class="videoContainer">
+        <video class="video" preload>
+            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
+            <!--src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"-->
+        </video>
+        <div class="vBigbutton"><button>Play!</button></div>
+        <div class="videoOver" onclick="togglePlay();">
+            <div class="vSub">
+                <div style="bottom: 0; position: absolute;">some text</div> 
+            </div>
+        </div>
+        <div class="videoControls">
+            <div class="vProgress">
+                <div class="vProgressbarLoaded"></div>
+                <div class="vProgressbar"><div class="vScrubber"></div></div>
+            </div>
+            <div class="vButtons">
+                <button>before</button>
+                <button id="vPlayPause" onclick="togglePlay();">Play</button>
+                <button>next</button>
+                <button onclick="fullscreen(true);">mute</button>
+                <div class="vTime">00:00 / 00:00</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var player = document.getElementsByClassName("videoPlayer");
+    var video = document.querySelector(".video");
+    var progressbar = document.querySelector(".vProgressbar");
+    var progressbarLoaded = document.querySelector(".vProgressbarLoaded");
+
+    function playPause(state) {
+        if (state) {
+            $('.vBigbutton').hide();
+            videoResize();
+            $('.video').get(0).play();
+        }else {
+            $('.video').get(0).pause();
+        }
+    }
+
+    function fullscreen(state) {
+        if(state) {
+            if (player.requestFullscreen) {
+                player.requestFullscreen();
+            } else if (player.webkitRequestFullscreen) { /* Safari */
+                player.webkitRequestFullscreen();
+            } else if (player.msRequestFullscreen) { /* IE11 */
+                player.msRequestFullscreen();
+            }
+        }else {
+
+        }
+    }
+
+    function videoResize(){
+        if($('.video').height() < $('.video').parent().height() && (!$('.video').width() < $('.video').parent().width())) {
+            $('.video').width("auto");
+            $('.video').height("100%");
+        }else {
+            //$('.video').height("auto");
+            //$('.video').width("100%");
+        }
+        $('.vSub').width(($(".video").width() / $('.video').parent().width() * 100) + "%");
+        $('.vSub').height(($(".video").height() / $('.video').parent().height() * 100) + "%");
+    }
+
+    window.addEventListener('resize', function() {
+        videoResize();
+    });
+
+    function togglePlay() {
+        playPause($('.video').get(0).paused);
+    }
+
+    $('.video').get(0).addEventListener('timeupdate', function() {
+        var videoProgress = $('.video').get(0).currentTime / $('.video').get(0).duration;
+
+        var date = new Date(0);
+        date.setSeconds($('.video').get(0).duration);
+        var duration = date.toISOString().substr(11, 8);
+
+        if(duration.startsWith("00")) {
+            var date = new Date(0);
+            date.setSeconds($('.video').get(0).currentTime);
+            var currentTime = date.toISOString().substr(14, 5);
+            var date = new Date(0);
+            date.setSeconds($('.video').get(0).duration);
+            var duration = date.toISOString().substr(14, 5);
+        }else {
+            var date = new Date(0);
+            date.setSeconds($('.video').get(0).currentTime);
+            var currentTime = date.toISOString().substr(11, 8);
+        }
+
+        document.querySelector(".vTime").innerHTML = (currentTime + " / " + duration);
+        
+
+        progressbar.style.width = videoProgress * 100 + "%";
+
+        var videoLoadedStart = $('.video').get(0).buffered.start(0) / $('.video').get(0).duration;
+        var videoLoadedEnd = $('.video').get(0).buffered.end(0) / $('.video').get(0).duration;
+
+        progressbarLoaded.style.width = videoLoadedEnd * 100 + "%";
+        progressbarLoaded.style.left = videoLoadedStart * 100 + "%";
+    })
+</script>
+        </div>
+        <div id="bar-right">
+        </div>
+    </body>
+    <link rel="stylesheet" href="/css/root/watch.css">
+    <script type="text/javascript" src="/js/root/watch.js"></script>
+</html>
+        </div>
+    </body>
+</html>
+
+<style>
+    #pagecontent {
+        width: 100%;
+        position: fixed;
+        top: 54px;
+        bottom: 0;
+        overflow: auto;
+        padding: 0px;
+        scrollbar-color: var(--scrollcolor);
+    }
+</style>

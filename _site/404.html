@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+    <header>
+        <head>
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/colors.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/scrollreveal.js"></script>
+        <script src="/collection.js"></script>
+        <style>
+            @font-face {
+                font-family: ArialUnicodeMS;
+                src: url(/font/ArialUnicodeMS.ttf);
+            }
+
+            body {
+                font-family: ArialUnicodeMS;
+                background-color: var(--systemGray5);
+            }
+
+            img {
+                -khtml-user-select: none;
+                -o-user-select: none;
+                -moz-user-select: none; 
+                -webkit-user-select: none;
+                user-select: none;
+                pointer-events: none;
+            }
+        </style>
+        <script>
+            document.body.classList.add("dark-mode");
+
+            (function($){
+                $(document).on('contextmenu', 'img', function() {
+                    return false;
+                })
+            })(jQuery);
+        </script>
+</head>
+<header>
+    <nav style="background-color: var(--systemGray6); border-bottom: 1px solid #191919; color: var(--text);" class="navbar navbar-expand-sm fixed-top">
+        <!-- Brand -->
+        <a class="navbar-brand" href="/" style="color: var(--text);">Murloc's Stream</a>
+      
+        
+        <ul class="navbar-nav">
+            <!-- Links 
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+            </li>
+        -->
+      
+          <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" style="color: var(--text);">
+                    Genre
+                </a>
+                <div class="dropdown-menu">
+                    <!--<a class="dropdown-item" href="/mods/lol/megumin/"></a>-->
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <form class="form-inline" action="/action_page.php">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-success" type="submit">Search</button>
+              </form>
+        </ul>
+    </nav> 
+</header>
+    </header>
+    <body>
+        <div id="pagecontent">
+            <div id="preloaderContainer">
+    <div id="preloaderContainer2">
+        <div class="loaderSpinner">
+    <div class="loaderSpinnerBar1"></div>
+    <div class="loaderSpinnerBar2"></div>
+    <div class="loaderSpinnerBar3"></div>
+    <div class="loaderSpinnerBar4"></div>
+    <div class="loaderSpinnerBar5"></div>
+    <div class="loaderSpinnerBar6"></div>
+    <div class="loaderSpinnerBar7"></div>
+    <div class="loaderSpinnerBar8"></div>
+    <div class="loaderSpinnerBar9"></div>
+    <div class="loaderSpinnerBar10"></div>
+    <div class="loaderSpinnerBar11"></div>
+    <div class="loaderSpinnerBar12"></div>
+</div>
+
+<style>
+    div.loaderSpinner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+    }
+
+    div.loaderSpinner div {
+        width: 6%;
+        height: 16%;
+        background: var(--text);
+        position: absolute;
+        left: 49%;
+        top: 43%;
+        opacity: 0;
+        border-radius: 50px;
+        box-shadow: 0 0 3px rgba(0,0,0,0.2);
+        animation: fade 1s linear infinite;
+        -webkit-border-radius: 50px;
+        -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.2);
+        -webkit-animation: fade 1s linear infinite;
+    }
+
+    @keyframes fade {
+        from {opacity: 1;}
+        to {opacity: 0.25;}
+    }
+
+    div.loaderSpinner div.loaderSpinnerBar1 {
+        transform: rotate(0deg) translate(0, -130%);
+        animation-delay: 0s;
+        -webkit-transform:rotate(0deg) translate(0, -130%);
+        -webkit-animation-delay: 0s;
+    }    
+
+    div.loaderSpinner div.loaderSpinnerBar2 {
+        transform: rotate(30deg) translate(0, -130%);
+        animation-delay: -0.9167s;
+        -webkit-transform:rotate(30deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.9167s;
+    }
+
+    div.loaderSpinner div.loaderSpinnerBar3 {
+        transform: rotate(60deg) translate(0, -130%);
+        animation-delay: -0.833s;
+        -webkit-transform:rotate(60deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.833s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar4 {
+        transform: rotate(90deg) translate(0, -130%);
+        animation-delay: -0.7497s;
+        -webkit-transform:rotate(90deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.7497s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar5 {
+        transform: rotate(120deg) translate(0, -130%);
+        animation-delay: -0.667s;
+        -webkit-transform:rotate(120deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.667s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar6 {
+        transform: rotate(150deg) translate(0, -130%);
+        animation-delay: -0.5837s;
+        -webkit-transform:rotate(150deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.5837s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar7 {
+        transform: rotate(180deg) translate(0, -130%);
+        animation-delay: -0.5s;
+        -webkit-transform:rotate(180deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.5s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar8 {
+        transform: rotate(210deg) translate(0, -130%);
+        animation-delay: -0.4167s;
+        -webkit-transform:rotate(210deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.4167s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar9 {
+        transform: rotate(240deg) translate(0, -130%); 
+        animation-delay: -0.333s;
+        -webkit-transform:rotate(240deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.333s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar10 {
+        transform:rotate(270deg) translate(0, -130%); 
+        animation-delay: -0.2497s;
+        -webkit-transform:rotate(270deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.2497s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar11 {
+        transform:rotate(300deg) translate(0, -130%); 
+        animation-delay: -0.167s;
+        -webkit-transform:rotate(300deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.167s;
+    }
+    div.loaderSpinner div.loaderSpinnerBar12 {
+        transform:rotate(330deg) translate(0, -130%); 
+        animation-delay: -0.0833s;
+        -webkit-transform:rotate(330deg) translate(0, -130%); 
+        -webkit-animation-delay: -0.0833s;
+    }
+</style>
+    </div>
+    <span>Loading...</span>
+</div>
+
+<style>
+
+    #preloaderContainer {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background-color: var(--systemGray6);
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 98;
+        overflow: hidden;
+        color: var(--text);
+    }
+
+    #preloaderContainer2 {
+        width: 54px;
+        height: 54px;
+        position: relative;
+    }
+</style>
+
+<script>
+    $(window).on("load",function(){
+        $("#preloaderContainer").fadeOut("slow");
+    }); 
+</script>
+            <style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+</style>
+
+<div class="container">
+  <h1>404</h1>
+
+  <p><strong>Page not found :(</strong></p>
+  <p>The requested page could not be found.</p>
+</div>
+
+        </div>
+    </body>
+</html>
+
+<style>
+    #pagecontent {
+        width: 100%;
+        position: fixed;
+        top: 54px;
+        bottom: 0;
+        overflow: auto;
+        padding: 0px;
+        scrollbar-color: var(--scrollcolor);
+    }
+</style>

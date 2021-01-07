@@ -1,0 +1,39 @@
+<div id="preloaderContainer">
+    <div id="preloaderContainer2">
+        {% include loader.html %}
+    </div>
+    <span>Loading...</span>
+</div>
+
+<style>
+
+    #preloaderContainer {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background-color: var(--systemGray6);
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 98;
+        overflow: hidden;
+        color: var(--text);
+    }
+
+    #preloaderContainer2 {
+        width: 54px;
+        height: 54px;
+        position: relative;
+    }
+</style>
+
+<script>
+    $(window).on("load",function(){
+        $("#preloaderContainer").fadeOut("slow");
+    }); 
+</script>
