@@ -244,12 +244,11 @@
 <script type="text/javascript" src="/js/artplayer.js"></script>
 <!--page script-->
 <script type="text/javascript">
-    address = document.location.href.split("/");
-    if (typeof address[4] == 'undefined' || address[4] == "") {
+    address = document.location.href.split("#");
+    if (typeof address[1] == 'undefined' || address[1] == "") {
         window.location.href = "/"
     } else
-    var vidAddress = address.splice(4)
-    var video = vidAddress.join('/')
+    var video = address.splice(1).toString()
 
     var art = new Artplayer({
         container: '.videoPlayer',
