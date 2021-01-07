@@ -3,21 +3,13 @@
     <header>
         <head>
     <meta charset="utf-8">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-        <title></title>
+        <title>Watch - Kyukishi's Player</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css/colors.css">
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <script src="/js/jquery.min.js"></script>
         <script src="/js/popper.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
-        <script src="/js/scrollreveal.js"></script>
-        <script src="/collection.js"></script>
         <style>
             @font-face {
                 font-family: ArialUnicodeMS;
@@ -48,40 +40,6 @@
             })(jQuery);
         </script>
 </head>
-<header>
-    <nav style="background-color: var(--systemGray6); border-bottom: 1px solid #191919; color: var(--text);" class="navbar navbar-expand-sm fixed-top">
-        <!-- Brand -->
-        <a class="navbar-brand" href="/" style="color: var(--text);">Murloc's Stream</a>
-      
-        
-        <ul class="navbar-nav">
-            <!-- Links 
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link 1</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link 2</a>
-            </li>
-        -->
-      
-          <!-- Dropdown -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" style="color: var(--text);">
-                    Genre
-                </a>
-                <div class="dropdown-menu">
-                    <!--<a class="dropdown-item" href="/mods/lol/megumin/"></a>-->
-                </div>
-            </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            <form class="form-inline" action="/action_page.php">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-success" type="submit">Search</button>
-              </form>
-        </ul>
-    </nav> 
-</header>
     </header>
     <body>
         <div id="pagecontent">
@@ -242,305 +200,94 @@
         $("#preloaderContainer").fadeOut("slow");
     }); 
 </script>
-            <html>
-    <body>
-        <div id=videohost>
-            <style>
-    .videoPlayer {
-        height: 100%;
-        width: 100%;
-        background-color: #000000;
-        position: relative;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        --ProgressbarHeight: 5px;
-        --accentColor: #3390B9;
-        --subTranslateY: ;
-    }
-
-    .videoPlayer:hover .videoOver{
-        height: calc(100% - 45px);
-    }
-
-    .videoPlayer:hover .videoControls{
-        transform: translateY(0);
-    }
-
-    .videoContainer {
+            <!---------styles--------->
+<style>
+    body{
+        background-color: var(--systemGray6);
         width: 100%;
         height: 100%;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        color: var(--text);
+        overflow-x: hidden;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
-    .video {
-        display: table;
-        margin: 0 auto;
-        outline: none;
-        max-width: 100%;
-        max-height: 100%;
+    body::-webkit-scrollbar {
+        display: none;
     }
 
-    .vBigbutton{
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
+    .videoPlayer{
         width: 100%;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
+        height: 100vh;
     }
 
-    .vBigbutton button{
-        display: block;
-        cursor: pointer;
-        border-radius: 50%;
-        border: 0;
-        outline: 0;
-        background-color: var(--accentColor);
-        height: 70px;
-        width: 70px;
-    }
-
-    .videoOver{
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        top: 0;
-        left: 0;
-        right: 0;
-        transition: all 0.2s;
-    }
-
-    .vSub{
-        color: #ffffff;
-        position: relative;
-    }
-
-    .videoControls {
-        display: flex;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        flex-wrap: wrap;
-        transform: translateY(100%);
-        transition: all 0.2s;
-    }
-
-    .vProgress {
-        height: 5px;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.4);
-        display: flex;
-        align-items: center;
-        position: relative;
-    }
-
-    .vProgress:hover .vProgressbar{
-        height: 8px;
-    }
-
-    .vProgress:hover .vScrubber{
-        width: 14px;
-        height: 14px;
-    }
-
-    .vProgressbarLoaded{
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.6);
-        position: absolute;
-    }
-
-    .vProgressbar {
-        height: 100%;
-        background-color: var(--accentColor);
-        position: absolute;
-        overflow: visible;
-        display: flex;
-        align-items: center;
-    }
-
-    .vScrubber {
-        width: 0;
-        height: 0;
-        border-radius: 50%;
-        background-color: var(--accentColor);
-        right: -7px;
-        position: absolute;
-    }
-
-    .vButtons{
-        display: flex;
-        align-items: center;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .vButtons * {
-        float:left; 
-        display:inline;
-        color: #ffffff;
-    }
-
-    .vButtons button {
-        background: none;
-        border: 0;
-        outline: 0;
-        cursor: pointer;
-        height: 40px;
-        display: inline-block;
-    }
-
-    .vButtons div{
-        font-size: 13px;
+    .link{
+        color: var(--systemBlue);
     }
 </style>
 
-<div class="videoPlayer">
-    <div class="videoContainer">
-        <video class="video" preload>
-            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
-            <!--src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"-->
-        </video>
-        <div class="vBigbutton"><button>Play!</button></div>
-        <div class="videoOver" onclick="togglePlay();">
-            <div class="vSub">
-                <div style="bottom: 0; position: absolute;">some text</div> 
-            </div>
+
+<!---------dom--------->
+<html>
+    <body>
+        <div class="videoPlayer"></div>
+        <div class="footer">
+            <span>Made by Kyukishi, visit </span><a class="link" href="https://kyukishi.github.io" target="_blank">kyukishi.github.io</a><span> for more Information</span>
         </div>
-        <div class="videoControls">
-            <div class="vProgress">
-                <div class="vProgressbarLoaded"></div>
-                <div class="vProgressbar"><div class="vScrubber"></div></div>
-            </div>
-            <div class="vButtons">
-                <button>before</button>
-                <button id="vPlayPause" onclick="togglePlay();">Play</button>
-                <button>next</button>
-                <button onclick="fullscreen(true);">mute</button>
-                <div class="vTime">00:00 / 00:00</div>
-            </div>
-        </div>
-    </div>
-</div>
+    </body>
+</html>
 
-<script>
-    var player = document.getElementsByClassName("videoPlayer");
-    var video = document.querySelector(".video");
-    var progressbar = document.querySelector(".vProgressbar");
-    var progressbarLoaded = document.querySelector(".vProgressbarLoaded");
 
-    function playPause(state) {
-        if (state) {
-            $('.vBigbutton').hide();
-            videoResize();
-            $('.video').get(0).play();
-        }else {
-            $('.video').get(0).pause();
-        }
-    }
+<!---------scripts--------->
+<!--imports-->
+<script type="text/javascript" src="/js/artplayer.js"></script>
+<!--page script-->
+<script type="text/javascript">
+    address = document.location.href.split("/");
+    if (typeof address[4] == 'undefined' || address[4] == "") {
+        window.location.href = "/"
+    } else
+    var vidAddress = address.splice(4)
+    var video = vidAddress.join('/')
 
-    function fullscreen(state) {
-        if(state) {
-            if (player.requestFullscreen) {
-                player.requestFullscreen();
-            } else if (player.webkitRequestFullscreen) { /* Safari */
-                player.webkitRequestFullscreen();
-            } else if (player.msRequestFullscreen) { /* IE11 */
-                player.msRequestFullscreen();
-            }
-        }else {
-
-        }
-    }
-
-    function videoResize(){
-        if($('.video').height() < $('.video').parent().height() && (!$('.video').width() < $('.video').parent().width())) {
-            $('.video').width("auto");
-            $('.video').height("100%");
-        }else {
-            //$('.video').height("auto");
-            //$('.video').width("100%");
-        }
-        $('.vSub').width(($(".video").width() / $('.video').parent().width() * 100) + "%");
-        $('.vSub').height(($(".video").height() / $('.video').parent().height() * 100) + "%");
-    }
-
-    window.addEventListener('resize', function() {
-        videoResize();
+    var art = new Artplayer({
+        container: '.videoPlayer',
+        url: video,
+        title: '',
+        isLive: false,
+        muted: false,
+        autoplay: false,
+        pip: false,
+        autoSize: false,
+        autoMini: false,
+        screenshot: true,
+        setting: true,
+        loop: false,
+        flip: true,
+        rotate: true,
+        playbackRate: true,
+        aspectRatio: true,
+        fullscreen: true,
+        fullscreenWeb: false,
+        subtitleOffset: true,
+        miniProgressBar: false,
+        localVideo: false,
+        localSubtitle: true,
+        networkMonitor: true,
+        mutex: true,
+        light: true,
+        backdrop: true,
+        theme: '#5E5CE6',
+        lang: navigator.language.toLowerCase(),
+        moreVideoAttr: {
+            crossOrigin: 'anonymous',
+        },
+        icons: {
+            loading: '<div class="loaderSpinner"><div class="loaderSpinnerBar1"></div><div class="loaderSpinnerBar2"></div><div class="loaderSpinnerBar3"></div><div class="loaderSpinnerBar4"></div><div class="loaderSpinnerBar5"></div><div class="loaderSpinnerBar6"></div><div class="loaderSpinnerBar7"></div><div class="loaderSpinnerBar8"></div><div class="loaderSpinnerBar9"></div><div class="loaderSpinnerBar10"></div><div class="loaderSpinnerBar11"></div><div class="loaderSpinnerBar12"></div></div>',
+        },
     });
-
-    function togglePlay() {
-        playPause($('.video').get(0).paused);
-    }
-
-    $('.video').get(0).addEventListener('timeupdate', function() {
-        var videoProgress = $('.video').get(0).currentTime / $('.video').get(0).duration;
-
-        var date = new Date(0);
-        date.setSeconds($('.video').get(0).duration);
-        var duration = date.toISOString().substr(11, 8);
-
-        if(duration.startsWith("00")) {
-            var date = new Date(0);
-            date.setSeconds($('.video').get(0).currentTime);
-            var currentTime = date.toISOString().substr(14, 5);
-            var date = new Date(0);
-            date.setSeconds($('.video').get(0).duration);
-            var duration = date.toISOString().substr(14, 5);
-        }else {
-            var date = new Date(0);
-            date.setSeconds($('.video').get(0).currentTime);
-            var currentTime = date.toISOString().substr(11, 8);
-        }
-
-        document.querySelector(".vTime").innerHTML = (currentTime + " / " + duration);
-        
-
-        progressbar.style.width = videoProgress * 100 + "%";
-
-        var videoLoadedStart = $('.video').get(0).buffered.start(0) / $('.video').get(0).duration;
-        var videoLoadedEnd = $('.video').get(0).buffered.end(0) / $('.video').get(0).duration;
-
-        progressbarLoaded.style.width = videoLoadedEnd * 100 + "%";
-        progressbarLoaded.style.left = videoLoadedStart * 100 + "%";
-    })
 </script>
         </div>
-        <div id="bar-right">
-        </div>
-    </body>
-    <link rel="stylesheet" href="/css/root/watch.css">
-    <script type="text/javascript" src="/js/root/watch.js"></script>
-</html>
-        </div>
     </body>
 </html>
-
-<style>
-    #pagecontent {
-        width: 100%;
-        position: fixed;
-        top: 54px;
-        bottom: 0;
-        overflow: auto;
-        padding: 0px;
-        scrollbar-color: var(--scrollcolor);
-    }
-</style>

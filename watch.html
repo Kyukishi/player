@@ -1,12 +1,9 @@
 ---
 layout: watch
+title: Watch - Kyukishi's Player
 ---
 
 <!---------styles--------->
-<!--imports-->
-<link rel="stylesheet" href="/Web/css/bootstrap.min.css">
-<link rel="stylesheet" href="/Web/css/colors.css">
-<!--page style-->
 <style>
     body{
         background-color: var(--systemGray6);
@@ -47,16 +44,20 @@ layout: watch
 
 <!---------scripts--------->
 <!--imports-->
-<script type="text/javascript" src="/Web/js/jquery.min.js"></script>
-<script type="text/javascript" src="/Web/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/Web/js/popper.min.js"></script>
-<script type="text/javascript" src="/Web/js/artplayer.js"></script>
+<script type="text/javascript" src="/js/artplayer.js"></script>
 <!--page script-->
 <script type="text/javascript">
+    address = document.location.href.split("/");
+    if (typeof address[4] == 'undefined' || address[4] == "") {
+        window.location.href = "/"
+    } else
+    var vidAddress = address.splice(4)
+    var video = vidAddress.join('/')
+
     var art = new Artplayer({
         container: '.videoPlayer',
-        url: 'https://node--olivia.vivo.sx/vod/ZWIigRExGEcnvQd-lqgX1Q/1610052532/0000089839',
-        title: 'Watch Zero.no.Tsukaima.S04E12.GerSub.WebRip.x264.mp4',
+        url: video,
+        title: '',
         isLive: false,
         muted: false,
         autoplay: false,
@@ -80,14 +81,13 @@ layout: watch
         mutex: true,
         light: true,
         backdrop: true,
-        theme: '#00B3FF',
+        theme: '#5E5CE6',
         lang: navigator.language.toLowerCase(),
         moreVideoAttr: {
             crossOrigin: 'anonymous',
         },
         icons: {
-            loading: '<img src="/assets/img/ploading.gif">',
-            state: '<img src="https://vivo.sx/assets/images/logo_small.png">',
+            loading: '<div class="loaderSpinner"><div class="loaderSpinnerBar1"></div><div class="loaderSpinnerBar2"></div><div class="loaderSpinnerBar3"></div><div class="loaderSpinnerBar4"></div><div class="loaderSpinnerBar5"></div><div class="loaderSpinnerBar6"></div><div class="loaderSpinnerBar7"></div><div class="loaderSpinnerBar8"></div><div class="loaderSpinnerBar9"></div><div class="loaderSpinnerBar10"></div><div class="loaderSpinnerBar11"></div><div class="loaderSpinnerBar12"></div></div>',
         },
     });
 </script>

@@ -1,3 +1,49 @@
+@media (prefers-color-scheme: dark) {
+    :root{
+        --systemGray: rgb(142, 142, 147)!important;
+        --systemGray2: rgb(99, 99, 102)!important;
+        --systemGray3: rgb(72, 72, 74)!important;
+        --systemGray4: rgb(58, 58, 60)!important;
+        --systemGray5: rgb(44, 44, 46)!important;
+        --systemGray6: rgb(28, 28, 30)!important;
+
+        --systemBlue: rgb(10, 132, 255)!important;
+        --systemGreen: rgb(48, 209, 88)!important;
+        --systemIndigo: rgb(94, 92, 230)!important;
+        --systemOrange: rgb(255, 159, 10)!important;
+        --systemPink: rgb(255, 55, 95)!important;
+        --systemPurple: rgb(191, 90, 242)!important;
+        --systemRed: rgb(255, 69, 58)!important;
+        --systemTeal: rgb(100, 210, 255)!important;
+        --systemYellow: rgb(255, 214, 10)!important;
+    
+        --text: #ffffff!important;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root{
+        --systemGray: rgb(142, 142, 147)!important;
+        --systemGray2: rgb(174, 174, 178)!important;
+        --systemGray3: rgb(199, 199, 204)!important;
+        --systemGray4: rgb(209, 209, 214)!important;
+        --systemGray5: rgb(229, 229, 234)!important;
+        --systemGray6: rgb(242, 242, 247)!important;
+
+        --systemBlue: rgb(0, 122, 255)!important;
+        --systemGreen: rgb(52, 199, 89)!important;
+        --systemIndigo: rgb(88, 86, 214)!important;
+        --systemOrange: rgb(255, 149, 0)!important;
+        --systemPink: rgb(255, 45, 85)!important;
+        --systemPurple: rgb(175, 82, 222)!important;
+        --systemRed: rgb(255, 59, 48)!important;
+        --systemTeal: rgb(90, 200, 250)!important;
+        --systemYellow: rgb(255, 204, 0)!important;
+
+        --text: #000000!important;
+    }
+}
+
 :root{
     --systemGray: rgb(142, 142, 147);
     --systemGray2: rgb(174, 174, 178);
@@ -6,13 +52,25 @@
     --systemGray5: rgb(229, 229, 234);
     --systemGray6: rgb(242, 242, 247);
 
+    --systemBlue: rgb(0, 122, 255);
+    --systemGreen: rgb(52, 199, 89);
+    --systemIndigo: rgb(88, 86, 214);
+    --systemOrange: rgb(255, 149, 0);
+    --systemPink: rgb(255, 45, 85);
+    --systemPurple: rgb(175, 82, 222);
+    --systemRed: rgb(255, 59, 48);
+    --systemTeal: rgb(90, 200, 250);
+    --systemYellow: rgb(255, 204, 0);
+
+    --text: #000000;
+    
     --systemGrayLight: rgb(142, 142, 147);
     --systemGrayLight2: rgb(174, 174, 178);
     --systemGrayLight3: rgb(199, 199, 204);
     --systemGrayLight4: rgb(209, 209, 214);
     --systemGrayLight5: rgb(229, 229, 234);
     --systemGrayLight6: rgb(242, 242, 247);
-
+    
     --systemGrayDark: rgb(142, 142, 147);
     --systemGrayDark2: rgb(99, 99, 102);
     --systemGrayDark3: rgb(72, 72, 74);
@@ -20,22 +78,23 @@
     --systemGrayDark5: rgb(44, 44, 46);
     --systemGrayDark6: rgb(28, 28, 30);
 
+    --systemBlueLight: rgb(0, 122, 255);
+    --systemGreenLight: rgb(52, 199, 89);
+    --systemIndigoLight: rgb(88, 86, 214);
+    --systemOrangeLight: rgb(255, 149, 0);
+    --systemPinkLight: rgb(255, 45, 85);
+    --systemPurpleLight: rgb(175, 82, 222);
+    --systemRedLight: rgb(255, 59, 48);
+    --systemTealLight: rgb(90, 200, 250);
+    --systemYellowLight: rgb(255, 204, 0);
 
-    --text: #000000;
-}
-
-.dark-mode, .dark-mode *{
-    --systemGray: rgb(142, 142, 147);
-    --systemGray2: rgb(99, 99, 102);
-    --systemGray3: rgb(72, 72, 74);
-    --systemGray4: rgb(58, 58, 60);
-    --systemGray5: rgb(44, 44, 46);
-    --systemGray6: rgb(28, 28, 30);
-
-
-    --text: #ffffff;
-}
-
-.dark-mode .icon {
-    filter:invert(100%);
+    --systemBlueDark: rgb(10, 132, 255);
+    --systemGreenDark: rgb(48, 209, 88);
+    --systemIndigoDark: rgb(94, 92, 230);
+    --systemOrangeDark: rgb(255, 159, 10);
+    --systemPinkDark: rgb(255, 55, 95);
+    --systemPurpleDark: rgb(191, 90, 242);
+    --systemRedDark: rgb(255, 69, 58);
+    --systemTealDark: rgb(100, 210, 255);
+    --systemYellowDark: rgb(255, 214, 10);
 }
