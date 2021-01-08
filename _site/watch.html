@@ -217,6 +217,29 @@
         display: none;
     }
 
+    #errorMessage{
+        visibility: hidden;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background-color: var(--systemGray6);
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+        overflow: hidden;
+        color: var(--text);
+    }
+
+    #errorMessage span{
+        position: relative;
+    }
+
     .videoPlayer{
         width: 100%;
         height: 100vh;
@@ -231,6 +254,10 @@
 <!---------dom--------->
 <html>
     <body>
+        <div id="errorMessage">
+            <span>No video link set</span>
+            <span>https://kyukishi.github.io/player/watch#[ur_video_url]</span>
+        </div>
         <div class="videoPlayer"></div>
         <div class="footer">
             <span>Made by Kyukishi, visit </span><a class="link" href="https://kyukishi.github.io" target="_blank">kyukishi.github.io</a><span> for more Information</span>
@@ -250,7 +277,11 @@
 
     address = document.location.href.split("#");
     if (typeof address[1] == 'undefined' || address[1] == "") {
-        window.location.href = "https://kyukishi.github.io/player/"
+        if ( window.location !== window.parent.location ) {
+            document.getElementById("errorMessage").style.visibility = "visible"; 
+        }else{
+            window.location.href = "https://kyukishi.github.io/player/"
+        } 
     } else
     var video = address.splice(1).toString()
 
