@@ -47,6 +47,10 @@ title: Watch - Kyukishi's Player
 <script type="text/javascript" src="https://kyukishi.github.io/player/js/artplayer.js"></script>
 <!--page script-->
 <script type="text/javascript">
+    if ( window.location !== window.parent.location ) {
+        $('.footer').remove();
+    }
+
     address = document.location.href.split("#");
     if (typeof address[1] == 'undefined' || address[1] == "") {
         window.location.href = "https://kyukishi.github.io/player/"
@@ -86,7 +90,7 @@ title: Watch - Kyukishi's Player
             crossOrigin: 'anonymous',
         },
         icons: {
-            loading: '<div class="loaderSpinner"><div class="loaderSpinnerBar1"></div><div class="loaderSpinnerBar2"></div><div class="loaderSpinnerBar3"></div><div class="loaderSpinnerBar4"></div><div class="loaderSpinnerBar5"></div><div class="loaderSpinnerBar6"></div><div class="loaderSpinnerBar7"></div><div class="loaderSpinnerBar8"></div><div class="loaderSpinnerBar9"></div><div class="loaderSpinnerBar10"></div><div class="loaderSpinnerBar11"></div><div class="loaderSpinnerBar12"></div></div>',
+            loading: '',
             state: '',
         },
     });
