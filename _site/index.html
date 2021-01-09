@@ -245,7 +245,7 @@
 </style>
 
 <div class="navbar">
-    <div class="homepage"><svg version="1.1" viewBox="0 0 512 512" onclick="homepage();" data-toggle="tooltip" data-placement="right" title="Back to Homepage"><polygon points="352,128.4 319.7,96 160,256 160,256 160,256 319.7,416 352,383.6 224.7,256 "/></svg>Kyukishi's Player</div>
+    <div class="homepage"><svg version="1.1" viewBox="0 0 512 512" onclick="homepage();"><polygon points="352,128.4 319.7,96 160,256 160,256 160,256 319.7,416 352,383.6 224.7,256 "/></svg>Kyukishi's Player</div>
 </div>
 
 <script>
@@ -254,12 +254,6 @@
     function homepage(){
         window.location.href = "https://kyukishi.github.io";
     }
-
-    $(document).ready(function(){
-        if (!isMobile) {
-            $('[data-toggle="tooltip"]').tooltip();
-        }
-    });
 </script>
     </header>
     <body>
