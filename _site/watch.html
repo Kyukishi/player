@@ -5,15 +5,15 @@
     <meta charset="utf-8">
         <title>Watch - Kyukishi's Player</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://kyukishi.github.io/player/css/colors.css">
-        <link rel="stylesheet" href="https://kyukishi.github.io/player/css/bootstrap.min.css">
-        <script src="https://kyukishi.github.io/player/js/jquery.min.js"></script>
-        <script src="https://kyukishi.github.io/player/js/popper.min.js"></script>
-        <script src="https://kyukishi.github.io/player/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://kyukishi.github.io/css/colors.css">
+        <link rel="stylesheet" href="https://kyukishi.github.io/css/bootstrap.min.css">
+        <script src="https://kyukishi.github.io/js/jquery.min.js"></script>
+        <script src="https://kyukishi.github.io/js/popper.min.js"></script>
+        <script src="https://kyukishi.github.io/js/bootstrap.min.js"></script>
         <style>
             @font-face {
                 font-family: ArialUnicodeMS;
-                src: url(/font/ArialUnicodeMS.ttf);
+                src: url(https://kyukishi.github.io/font/ArialUnicodeMS.ttf);
             }
 
             body {
@@ -39,10 +39,7 @@
             })(jQuery);
         </script>
 </head>
-    </header>
-    <body>
-        <div id="pagecontent">
-            <div id="preloaderContainer">
+        <div id="preloaderContainer">
     <div id="preloaderContainer2">
         <div class="loaderSpinner">
     <div class="loaderSpinnerBar1"></div>
@@ -199,8 +196,10 @@
         $("#preloaderContainer").fadeOut("slow");
     }); 
 </script>
-            <!---------styles--------->
-<style>
+    </header>
+    <body>
+        <div id="pagecontent">
+            <style>
     body{
         background-color: var(--systemGray6);
         width: 100%;
@@ -250,7 +249,6 @@
 </style>
 
 
-<!---------dom--------->
 <html>
     <body>
         <div id="errorMessage">
@@ -265,10 +263,7 @@
 </html>
 
 
-<!---------scripts--------->
-<!--imports-->
 <script type="text/javascript" src="https://kyukishi.github.io/player/js/artplayer.js"></script>
-<!--page script-->
 <script type="text/javascript">
     if ( window.location !== window.parent.location ) {
         $('.footer').remove();
