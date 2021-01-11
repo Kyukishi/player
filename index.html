@@ -4,6 +4,12 @@ title: Kyukishi's Player
 ---
 
 <style>
+    .body{
+        min-height: calc(100vh - 54px);
+        max-height: 100%;
+        position: relative;
+    }
+
     iframe{
         border: none;
         width: 100%;
@@ -17,22 +23,87 @@ title: Kyukishi's Player
         height: 100vh;
     }
 
-    footer{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
+    #addons .container{
+        height: 200px;
+        width: 600px;
+        border: solid var(--text) 1px;
+    }
+
+    @media only screen and (max-width: 768px){
+        #addons .container{
+        height: 200px;
+        width: 100%;
+    }
+    }
+
+    #addons svg{
+        fill: var(--text);
+        width: 85px;
+        float: left;
+    }
+
+    #addons .addonText{
+        width: calc(100% - 85px);
+        float: left;
+    }
+
+    #addons .addonButtons{
+        float: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #addons .addonButtons button{
+        background-color: var(--systemGreen);
+        color: var(--text);
+        padding: 8px 16px;
+        border-radius: 4px;
+        border: none;
+        fill: var(--text);
+        display: block;
+    }
+
+    #addons .addonButtons button svg{
+        height: 30px;
+        width: 30px;
+        border-right: solid var(--text) 1px;
+        padding-right: 8px;
+        margin-right: 8px;
+    }
+
+    #addons .addonButtons button span{
+        text-align: center;
+        line-height: 100%;
+        height: 100%;
+    }
+
+    #addons .addonButtons button:hover{
+        filter: brightness(95%);
     }
 
 </style>
 
 <html>
-    <body>
+    <div class="body">
         <div class="previewContainer">
             <iframe id="preview" allowfullscreen></iframe>
         </div>
-        
-    </body>
+        <div id="addons">
+            <div class="container">
+                <div>
+                    <svg version="1.1" viewBox="0 0 500 500"><path d="M493.02,310.32c-9.36-54.01-73.97-80.4-116.59-41.94c-5.11,4.61-10.69,6.49-17.59,5.9  c-4.43-0.38-7.36-1.8-7.29-7.07c0.31-21.06,1.44-41.71-0.17-62.72c-0.9-11.8,0.43-24.48-6.34-35.19  c-10.63-16.79-24.64-27.58-45.78-27.63c-23.08-0.06-73.65-2.01-75.54-2.01c-2.74-8.35-0.7-15.07,3.85-21.29  c1.23-1.68,2.33-3.46,3.59-5.11c10.48-13.67,14.44-29.04,13.97-46.27c-1.33-49.5-50.35-78.36-93.62-62.77  c-45.84,16.52-60.71,73.63-29.21,111.08c6.54,7.78,9.02,15.2,4.86,25.18c-1.86,0-56.96,0.81-82.28,1.4  c-19.6,0.46-42.72,21.88-43.35,40.65c-0.25,7.26-0.5,20.17-0.6,25.81c0.45,13.48,0.05,26.87-0.26,40.38  c-0.02,3.95-0.04,8.12-0.06,12.48c0.64,3.64,3.33,4.74,7.14,5.07c6.9,0.59,12.48-1.29,17.59-5.9  c42.63-38.47,107.23-12.07,116.59,41.94c0.14,0.83,0.58,1.62,0.88,2.43v15.63c-1,3.63-1.93,7.29-3,10.9  c-14.63,49.35-72.89,67.39-112.46,34.49c-7.72-6.42-15.48-8.48-25.9-5.77c0,4.13-0.65,36.72-1.02,62.22  c0.09,13.6,0.23,22.96,0.46,25.53v1.03h0.09c0.32,3.63,0.64,7.26,0.99,10.88c0.94,9.94,6.08,17.69,13.18,24.66  c4.23,4.15,8.8,7.35,13.69,9.69c6.59,3.16,13.87,4.61,21.18,4.61h250.71c7.35,0,14.63-1.65,21.15-5.05  c0.05-0.02,0.09-0.05,0.14-0.07c10.33-5.42,17.68-14.26,24.06-24.01c3.56-5.44,5.17-10.9,5.21-17.44  c0.12-22.39,1.28-78.56,1.28-84.06c10.42-2.71,18.17-0.65,25.9,5.77c39.56,32.9,97.83,14.86,112.46-34.49  c1.07-3.61,2.01-7.27,3-10.9v-15.63C493.6,311.94,493.16,311.15,493.02,310.32z"/></svg>
+                    <div class="addonText">
+                        <h1>Kyukishi-Player Helper</h1>
+                        <p>an small addon what allows you to play Videos from anywere in this Player</p>
+                    </div>
+                </div>
+                <div class="addonButtons">
+                    <button class="button" onclick="download('Helper');"><svg version="1.1" viewBox="0 0 1000 1000"><g><g><g><g><polygon points="534.8,755.6 534.8,145.4 465.2,145.4 465.2,755.6 292.3,582.7 243.2,631.9 500,888.7 756.8,631.9 707.7,582.7 "/></g><g><path d="M500,10C229.8,10,10,229.8,10,500s219.8,490,490,490c270.2,0,490-219.8,490-490S770.2,10,500,10z M500,923.7C266.4,923.7,76.3,733.6,76.3,500c0-233.6,190-423.7,423.7-423.7c233.6,0,423.7,190.1,423.7,423.7C923.7,733.6,733.6,923.7,500,923.7z"/></g></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></g></svg><span>Download</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
         {% include patreonFooter.html %}
     </footer>
@@ -41,5 +112,12 @@ title: Kyukishi's Player
 <script>
     $(window).on("load",function(){
         document.getElementById('preview').src = "https://kyukishi.github.io/player/watch#http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+
+        address = document.location.href.split("?");
+
+        if(address[1] == "addon"){
+            var addons = document.getElementById("addons");
+            addons.scrollIntoView();
+        }
     });
 </script>
