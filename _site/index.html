@@ -1,23 +1,17 @@
 <!doctype html>
 <html>
-    <header>
+    <head>
         <head>
     <meta charset="utf-8">
         <title>Kyukishi's Player</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://kyukishi.github.io/css/colors.css">
-        <link rel="stylesheet" href="https://kyukishi.github.io/css/bootstrap.min.css">
-        <script src="https://kyukishi.github.io/js/jquery.min.js"></script>
-        <script src="https://kyukishi.github.io/js/popper.min.js"></script>
-        <script src="https://kyukishi.github.io/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://kyukishi.github.io/player/css/colors.css">
+        <link rel="stylesheet" href="https://kyukishi.github.io/player/css/bootstrap.min.css">
         <style>
-            @font-face {
-                font-family: ArialUnicodeMS;
-                src: url(https://kyukishi.github.io/font/ArialUnicodeMS.ttf);
-            }
+            @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
             body {
-                font-family: ArialUnicodeMS;
+                font-family: 'Roboto', sans-serif;
                 background-color: var(--systemGray5);
                 color: var(--text);
             }
@@ -31,6 +25,9 @@
                 pointer-events: none;
             }
         </style>
+        <script src="https://kyukishi.github.io/player/js/jquery.min.js"></script>
+        <script src="https://kyukishi.github.io/player/js/popper.min.js"></script>
+        <script src="https://kyukishi.github.io/player/js/bootstrap.min.js"></script>
         <script>
             (function($){
                 $(document).on('contextmenu', 'img', function() {
@@ -196,6 +193,8 @@
         $("#preloaderContainer").fadeOut("slow");
     }); 
 </script>
+    </head>
+    <header>
         <style>
     .navbar{
         width: 100%;
@@ -284,6 +283,13 @@
         height: 100vh;
     }
 
+    footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
 </style>
 
 <html>
@@ -293,6 +299,175 @@
         </div>
         
     </body>
+    <footer>
+        <div id="patreonContainer">
+    <p id="patreonHeader">Do you like this work?</p>
+    <div id=chibi>
+        <img  style="position: absolute; left: 0; bottom: 0; height: 100%;">
+    </div>
+    <div id="patreonContainer3">
+        <p id="patreonText">then you can support me for more like this by click the button below and join my Patreon!</p>
+
+        <div id="patreonButtonContainer">
+            <div id="patreonButton" onclick="patreonButtonClick();">
+                <svg width="180px" height="60px" viewBox="0 0 180 60">
+                <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                </svg>
+                <div id="patreonButtonImage">
+                    <img src="/images/Digital-Patreon-Logo_FieryCoral.png">
+                </div>
+                <div id="patreonButtonText">
+                    <span>Patreon</span>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #patreonContainer{
+        width: 100%;
+        height: 150px;
+        position: relative;
+        overflow: hidden;
+        color: var(--text);
+        background-color: var(--systemGray6);
+        border-top: 1px solid var(--systemGray);
+    }
+
+    #patreonContainer #patreonHeader{
+        font-size: 1.5rem;
+        line-height: 1;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    #patreonContainer #patreonText{
+        font-size: 0.875rem;
+        line-height: 1.28571;
+        letter-spacing: 0.08em;
+        display: table;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 4px;
+    }
+
+    #patreonContainer #chibi {
+        width: 30%;
+        height: 100%;
+        float: left;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    #patreonContainer #patreonContainer3{
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        position: absolute;
+    }
+
+    #patreonContainer #patreonButtonContainer{
+        position: relative;
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 8px;
+    }
+
+    #patreonContainer #patreonButton {
+        width: 180px;
+        height: 60px;
+        cursor: pointer;
+        background: #141518;
+        border: 1px solid #363B44;
+        border-radius: 0px;
+        outline: none;
+        transition: 1s ease-in-out;
+        padding: 0px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    #patreonContainer #patreonButton svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        fill: none;
+        stroke: #fff;
+        stroke-dasharray: 150 480;
+        stroke-dashoffset: 150;
+        transition: 1s ease-in-out;
+    }
+
+    #patreonContainer #patreonButton:hover {
+        transition: 1s ease-in-out;
+        background: #ff424d;
+    }
+
+    #patreonContainer #patreonButton:hover svg {
+        stroke-dashoffset: -480;
+    }
+
+    #patreonContainer #patreonButtonText {
+        width: 75%;
+        height: 100%;
+        float: left;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    #patreonContainer #patreonButton span {
+        color: #ff424d;
+        font-size: 100%;
+        font-weight: 800;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        width: 100%;
+        text-align: center;
+    }
+
+    #patreonContainer #patreonButton:hover span {
+        transition: 1s ease-in-out;
+        color: #141518;
+    }
+
+    #patreonContainer #patreonButton img{
+        width: 100%;
+        background-color: #141518;
+    }
+
+    #patreonContainer #patreonButtonImage{
+        float: left;
+        width: 25%;
+        height: 100%;
+        padding: 0px 8px;
+        background-color: #141518;
+        display: inline-flex;
+        align-items: center;
+    }
+</style>
+
+<script>
+    function patreonButtonClick() {
+        window.open("https://www.patreon.com/GiantMurloc");
+    }
+
+    $("patreonButton").on('click', function(e) {
+   if (e.which == 2) {
+      patreonButtonClick();
+   }
+});
+</script>
+    </footer>
 </html>
 
 <script>

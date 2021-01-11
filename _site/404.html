@@ -1,23 +1,17 @@
 <!doctype html>
 <html>
-    <header>
+    <head>
         <head>
     <meta charset="utf-8">
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://kyukishi.github.io/css/colors.css">
-        <link rel="stylesheet" href="https://kyukishi.github.io/css/bootstrap.min.css">
-        <script src="https://kyukishi.github.io/js/jquery.min.js"></script>
-        <script src="https://kyukishi.github.io/js/popper.min.js"></script>
-        <script src="https://kyukishi.github.io/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://kyukishi.github.io/player/css/colors.css">
+        <link rel="stylesheet" href="https://kyukishi.github.io/player/css/bootstrap.min.css">
         <style>
-            @font-face {
-                font-family: ArialUnicodeMS;
-                src: url(https://kyukishi.github.io/font/ArialUnicodeMS.ttf);
-            }
+            @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
             body {
-                font-family: ArialUnicodeMS;
+                font-family: 'Roboto', sans-serif;
                 background-color: var(--systemGray5);
                 color: var(--text);
             }
@@ -31,6 +25,9 @@
                 pointer-events: none;
             }
         </style>
+        <script src="https://kyukishi.github.io/player/js/jquery.min.js"></script>
+        <script src="https://kyukishi.github.io/player/js/popper.min.js"></script>
+        <script src="https://kyukishi.github.io/player/js/bootstrap.min.js"></script>
         <script>
             (function($){
                 $(document).on('contextmenu', 'img', function() {
@@ -196,6 +193,8 @@
         $("#preloaderContainer").fadeOut("slow");
     }); 
 </script>
+    </head>
+    <header>
         <style>
     .navbar{
         width: 100%;
