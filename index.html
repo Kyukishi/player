@@ -247,7 +247,9 @@ title: Kyukishi's Player
 
         $("#codeInput").on('keyup', function (e) {
             if (e.key === 'Enter' || e.keyCode === 13) {
-                document.getElementById('preview').src = ('https://kyukishi.github.io/player/watch#' + document.getElementById("codeInput").value);
+                if(!(typeof document.getElementById("codeInput").value == 'undefined' || document.getElementById("codeInput").value == ""))
+                    document.getElementById('preview').src = ('https://kyukishi.github.io/player/watch#' + document.getElementById("codeInput").value);
+                    document.getElementById('preview').contentWindow.location.reload();
             }
         });
 
