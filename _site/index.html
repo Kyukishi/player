@@ -370,6 +370,13 @@
         font-size: 1rem;
     }
 
+    code{
+        background-color: var(--systemGray6);
+        border-radius: 4px;
+        padding: 4px 8px;
+    }
+
+
     @media only screen and (max-width: 768px){
         #addons .container, #addons ul li{
             width: 100%;
@@ -386,7 +393,6 @@
             margin-right: 0!important;
         }
     }
-
 </style>
 
 <html>
@@ -485,7 +491,7 @@
     }
 
     $(window).on("load",function(){
-        //document.getElementById('preview').src = "https://kyukishi.github.io/player/watch#http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+        document.getElementById('preview').src = "https://kyukishi.github.io/player/watch#http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
 
         address = document.location.href.split("?");
 
