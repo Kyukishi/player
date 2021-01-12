@@ -366,51 +366,44 @@
         }
     }
 
-    address = document.location.href.split("#");
-    if (typeof address[1] == 'undefined' || address[1] == "") {
-        if ( window.location !== window.parent.location ) {
-            errorMsg("noLink");
-        }else{
-            window.location.href = "https://kyukishi.github.io/player/"
-        } 
-    } else
-    var video = address.splice(1).toString()
+    function startVid(){
+        var video = address.splice(1).toString()
 
-    var art = new Artplayer({
-        container: '.videoPlayer',
-        url: video,
-        title: '',
-        isLive: false,
-        muted: false,
-        autoplay: false,
-        pip: false,
-        autoSize: false,
-        autoMini: true,
-        screenshot: true,
-        setting: true,
-        loop: false,
-        flip: true,
-        rotate: true,
-        playbackRate: true,
-        aspectRatio: true,
-        fullscreen: true,
-        fullscreenWeb: false,
-        subtitleOffset: true,
-        miniProgressBar: false,
-        localVideo: false,
-        localSubtitle: true,
-        networkMonitor: true,
-        mutex: true,
-        light: false,
-        backdrop: true,
-        theme: '#5E5CE6',
-        lang: navigator.language.toLowerCase(),
-        moreVideoAttr: {
-            crossOrigin: 'anonymous',
-        },
-        icons: {
-            loading: `
-            <div id="loaderContainer2"><div class="loaderSpinner">
+        var art = new Artplayer({
+            container: '.videoPlayer',
+            url: video,
+            title: '',
+            isLive: false,
+            muted: false,
+            autoplay: false,
+            pip: false,
+            autoSize: false,
+            autoMini: true,
+            screenshot: true,
+            setting: true,
+            loop: false,
+            flip: true,
+            rotate: true,
+            playbackRate: true,
+            aspectRatio: true,
+            fullscreen: true,
+            fullscreenWeb: false,
+            subtitleOffset: true,
+            miniProgressBar: false,
+            localVideo: false,
+            localSubtitle: true,
+            networkMonitor: true,
+            mutex: true,
+            light: false,
+            backdrop: true,
+            theme: '#5E5CE6',
+            lang: navigator.language.toLowerCase(),
+            moreVideoAttr: {
+                crossOrigin: 'anonymous',
+            },
+            icons: {
+                loading: `
+                <div id="loaderContainer2"><div class="loaderSpinner">
     <div class="loaderSpinnerBar1"></div>
     <div class="loaderSpinnerBar2"></div>
     <div class="loaderSpinnerBar3"></div>
@@ -529,14 +522,25 @@
         -webkit-animation-delay: -0.0833s;
     }
 </style></div>
-            `,
-            state: '',
-        },
-    });
+                `,
+                state: '',
+            },
+        });
 
-    art.on('video:error', function (event) {
-        errorMsg("src");
-    });
+        art.on('video:error', function (event) {
+            errorMsg("src");
+        });
+    }
+
+    address = document.location.href.split("#");
+    if (typeof address[1] == 'undefined' || address[1] == "") {
+        if ( window.location !== window.parent.location ) {
+            errorMsg("noLink");
+        }else{
+            window.location.href = "https://kyukishi.github.io/player/"
+        } 
+    } else
+    startVid();
 </script>
         </div>
     </body>
