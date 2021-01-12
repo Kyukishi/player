@@ -327,12 +327,12 @@
 <html>
     <body>
         <div id="errorMessage">
-            <div id="noLink">
-                <h1>No video link set</h1>
+            <div id="noUrl">
+                <h1>No video url set</h1>
                 <p>https://kyukishi.github.io/player/watch#[ur_video_url]</p>
             </div>
             <div id="src">
-                <h1>The video link is invalid or blocked by the provider</h1>
+                <h1>The video url is invalid or blocked by the provider</h1>
                 <p>If its blocked you can fix it with the Helper Addon</p>
                 <button class="button" onclick="window.open('https://kyukishi.github.io/player/?addon')"><svg version="1.1" viewBox="0 0 1000 1000"><g><g><g><g><polygon points="534.8,755.6 534.8,145.4 465.2,145.4 465.2,755.6 292.3,582.7 243.2,631.9 500,888.7 756.8,631.9 707.7,582.7 "/></g><g><path d="M500,10C229.8,10,10,229.8,10,500s219.8,490,490,490c270.2,0,490-219.8,490-490S770.2,10,500,10z M500,923.7C266.4,923.7,76.3,733.6,76.3,500c0-233.6,190-423.7,423.7-423.7c233.6,0,423.7,190.1,423.7,423.7C923.7,733.6,733.6,923.7,500,923.7z"/></g></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></g></svg>Kyukishi-Player Helper</button>
             </div>
@@ -358,8 +358,8 @@
         if(!(e == "remove")){
             document.getElementById("errorMessage").style.visibility = "visible";
         }
-        if(e == "noLink"){
-            document.getElementById("noLink").style.visibility = "visible";
+        if(e == "noUrl"){
+            document.getElementById("noUrl").style.visibility = "visible";
         }
         if(e == "src"){
             document.getElementById("src").style.visibility = "visible";
@@ -532,10 +532,15 @@
         });
     }
 
+    window.addEventListener('popstate', function (event) {
+        window.location.reload();
+    });
+
+
     address = document.location.href.split("#");
     if (typeof address[1] == 'undefined' || address[1] == "" || address[1] == "#" || address[1] == "http://" || address[1] == "https://" || !address[1].startsWith("http")) {
         if ( window.location !== window.parent.location ) {
-            errorMsg("noLink");
+            errorMsg("noUrl");
         }else{
             window.location.href = "https://kyukishi.github.io/player/"
         } 

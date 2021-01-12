@@ -10,6 +10,12 @@ title: Kyukishi's Player
         position: relative;
         width: 100%;
         max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .body p, .body h2, .body h4{
+        text-align: center;
     }
 
     iframe{
@@ -23,6 +29,8 @@ title: Kyukishi's Player
         width: 100%;
         max-height: 400px;
         height: 100vh;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #addons .container{
@@ -107,7 +115,17 @@ title: Kyukishi's Player
     code{
         background-color: var(--systemGray6);
         border-radius: 4px;
-        padding: 4px 8px;
+        padding: 16px 8px;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    code input{
+        color: var(--systemOrange);
+        background: none;
+        border: none;
+        outline: none;
     }
 
 
@@ -131,21 +149,21 @@ title: Kyukishi's Player
 
 <html>
     <div class="body">
-        <h2 class="code-line"><a id="Welcome_to_Kyukishis_Player_0"></a>Welcome to Kyukishi’s Player</h2>
-        <p class="has-line-data">This web-app is a simple but ad-free video player that can be placed anywere in any website.<br>
+        <h2>Welcome to Kyukishi’s Player</h2>
+        <p>This web-app is a simple but ad-free video player that can be placed anywere in any website.<br>
         It contains features like screenshot, subtitle and with a user-side addon also the ability to play video files from any source</p>
-        <h4 class="code-line"><a id="Implemention_4"></a>Implemention</h4>
+        <h4>Implemention</h4>
         
         <code>
-            <span style="color: var(--text);"><</span><span style="color: var(--systemBlue);">iframe</span> <span style="color: var(--systemBlue); filter: brightness(150%);">src</span><span style="color: var(--text);">=</span><span style="color: var(--systemOrange);">"https://kyukishi.github.io/player/watch#[ur_video]"</span> <span style="color: var(--systemBlue); filter: brightness(150%);">allowfullscreen</span><span style="color: var(--text);">></span><span style="color: var(--text);"><</span><span style="color: var(--systemBlue);">/iframe</span><span style="color: var(--text);">></span>
+            <span style="color: var(--text);"><</span><span style="color: var(--systemBlue);">iframe</span> <span style="color: var(--systemBlue); filter: brightness(150%);">src</span><span style="color: var(--text);">=</span><span style="color: var(--systemOrange);">"https://kyukishi.github.io/player/watch#</span><input id="codeInput" type="text" placeholder="[ur_video_url]" size="14"><span style="color: var(--systemOrange);">"</span> <span style="color: var(--systemBlue); filter: brightness(150%);">allowfullscreen</span><span style="color: var(--text);">></span><span style="color: var(--text);"><</span><span style="color: var(--systemBlue);">/iframe</span><span style="color: var(--text);">></span>
         </code>
 
-        <p class="has-line-data">replace “[ur_video]” with your video source.</p>
-        <h4 class="code-line"><a id="Addons_10"></a>Addons</h4>
-        <p class="has-line-data">addons using Kyukishi-Player</p>
+        <p>replace “[ur_video]” with your video source.</p>
         <div class="previewContainer">
             <iframe id="preview" allowfullscreen></iframe>
         </div>
+        <h4>Addons</h4>
+        <p>addons using Kyukishi-Player</p>
         <div id="addons">
             <div class="container">
                 <div class="description">
@@ -226,6 +244,12 @@ title: Kyukishi's Player
 
     $(window).on("load",function(){
         document.getElementById('preview').src = "https://kyukishi.github.io/player/watch#http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+
+        $("#codeInput").on('keyup', function (e) {
+            if (e.key === 'Enter' || e.keyCode === 13) {
+                document.getElementById('preview').src = ('https://kyukishi.github.io/player/watch#' + document.getElementById("codeInput").value);
+            }
+        });
 
         address = document.location.href.split("?");
 
