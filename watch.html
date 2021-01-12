@@ -222,7 +222,7 @@ title: Watch - Kyukishi's Player
     }
 
     address = document.location.href.split("#");
-    if (typeof address[1] == 'undefined' || address[1] == "") {
+    if (typeof address[1] == 'undefined' || address[1] == "" || address[1] == "#" || address[1] == "http://" || address[1] == "https://") {
         if ( window.location !== window.parent.location ) {
             errorMsg("noLink");
         }else{
