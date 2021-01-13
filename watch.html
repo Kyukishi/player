@@ -96,33 +96,16 @@ title: Watch - Kyukishi's Player
         position: relative;
     }
 
-    .loaderContainer{
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        right: 0;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        z-index: 3;
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        pointer-events: none
-    }
-
-    #loaderContainer2{
-        width: 54px;
-        height: 54px;
-        position: relative;
-    }
-
     .videoPlayer{
-        z-index: 2;
         width: 100%;
         height: 100%;
         position: absolute;
+    }
+
+    #loaderContainer{
+        width: 54px;
+        height: 54px;
+        position: relative;
     }
 
     .link{
@@ -145,7 +128,6 @@ title: Watch - Kyukishi's Player
             </div>
         </div>
         <div class="videoPlayerContainer">
-            <div class="loaderContainer"></div>
             <div class="videoPlayer"></div>
         </div>
         <div class="footer">
@@ -211,7 +193,7 @@ title: Watch - Kyukishi's Player
             },
             icons: {
                 loading: `
-                <div id="loaderContainer2">{% include loader.html %}</div>
+                <div id="loaderContainer">{% include loader.html %}</div>
                 `,
                 state: '',
             },
@@ -220,6 +202,15 @@ title: Watch - Kyukishi's Player
         art.on('video:error', function (event) {
             errorMsg("src");
         });
+
+        var timeoutid = 0;
+        function hideControls() {
+            $(".art-bottom").css('visibility', 'visible');
+            clearTimeout(timeoutid);
+            timeoutid = setTimeout(function() {
+                $(".art-bottom").css('visibility', 'hidden');
+            }, 3000);
+        }
 
         function download(filename, url) {
             var element = document.createElement('a');
@@ -238,12 +229,14 @@ title: Watch - Kyukishi's Player
         document.addEventListener('keydown', function(event) {
             if (event.code == 'KeyF') {
                 art.player.fullscreenToggle = true;
+                hideControls();
             }
-            if (event.code == 'KeyK' || event.code == 'Space') {
+            if (event.code == 'KeyK') {
                 if(art.player.playing){
                     art.player.play = false;
                 }else{
                     art.player.play = true;
+                    hideControls();
                 }
             }
             if (event.code == 'KeyM') {
@@ -258,6 +251,7 @@ title: Watch - Kyukishi's Player
             }
             if (event.code.startsWith('Numpad') && event.code.length == 7) {
                 art.player.currentTime = (art.player.duration / 100 * (event.code.slice(-1) * 10));
+                hideControls();
             }
             if (event.code == 'KeyS' && (event.ctrlKey || event.metaKey)) {
                 download("kyukishiPlayer.mp4",video);
@@ -265,6 +259,14 @@ title: Watch - Kyukishi's Player
                 event.stopPropagation();
             }
         });
+        $(".videoPlayer").mousemove(function() {
+            $(".art-bottom").css('visibility', 'visible');
+            clearTimeout(timeoutid);
+            timeoutid = setTimeout(function() {
+                $(".art-bottom").css('visibility', 'hidden');
+            }, 3000);
+        });
+
     }
 
     window.addEventListener('popstate', function (event) {
