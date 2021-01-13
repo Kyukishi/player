@@ -351,6 +351,7 @@
 <script type="text/javascript" src="https://kyukishi.github.io/player/js/artplayer.js"></script>
 <script type="text/javascript">
     if ( window.location !== window.parent.location ) {
+        document.body.style.overflow = 'hidden';
         $('.footer').remove();
     }
 
@@ -529,6 +530,32 @@
 
         art.on('video:error', function (event) {
             errorMsg("src");
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.code == 'KeyF') {
+                art.player.fullscreenToggle = true;
+            }
+            if (event.code == 'KeyK') {
+                if(art.player.playing){
+                    art.player.play = false;
+                }else{
+                    art.player.play = true;
+                }
+            }
+            if (event.code == 'KeyM') {
+                if(art.player.muted){
+                    art.player.muted = false;
+                }else{
+                    art.player.muted = true;
+                }
+            }
+            if (event.code == 'F13') {
+                art.player.screenshot();
+            }
+            if (event.code.startsWith('Numpad') && event.code.length == 7) {
+                art.player.currentTime = (art.player.duration / 100 * (event.code.slice(-1) * 10));
+            }
         });
     }
 
