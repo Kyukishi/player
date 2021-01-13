@@ -394,6 +394,11 @@
         outline: none;
     }
 
+    .link{
+        color: var(--systemBlue);
+        outline: none;
+    }
+
 
     @media only screen and (max-width: 768px){
         #addons .container, #addons ul li{
@@ -429,6 +434,7 @@
         <div class="previewContainer">
             <iframe id="preview" allowfullscreen></iframe>
         </div>
+        <p>Video courtesy of <a class="link" href="https://peach.blender.org/" target="_blank">Big Buck Bunny</a>.</p>
         <h4>Addons</h4>
         <p>addons using Kyukishi-Player</p>
         <p>Chrome users cant use the addon yet. Opera need to download and enable it in the extensions manager</p>
@@ -515,7 +521,7 @@
     }
 
     $(window).on("load",function(){
-        document.getElementById('preview').src = "https://kyukishi.github.io/player/watch#http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+        document.getElementById('preview').src = "https://kyukishi.github.io/player/watch#https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
 
         $("#codeInput").on('keyup', function (e) {
             if (e.key === 'Enter' || e.keyCode === 13) {
