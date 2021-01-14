@@ -586,11 +586,7 @@
         }
 
         function download(file) {
-            $.ajax({
-                type: "POST",
-                url: 'https://kyukishi.github.io/player/downloadVideo.php',
-                data: {url: file},
-            });
+            window.open(file);
         }
 
         document.addEventListener('keydown', function(event) {
