@@ -153,36 +153,51 @@ title: Watch - Kyukishi's Player
     function startVid(){
         var video = address.splice(1).toString()
 
-        if(navigator.share){
-            var deviceConf = [
+        var playerConf = Array;
+
+        if ( window.location !== window.parent.location ) {
+            playerConf.contextmenu = [
                 {
-                    position: 'right',
-                    tooltip: 'Share',
-                    html: '<svg xmlns="http://www.w3.org/2000/svg" height="22" width="22"><path fill="#fff" d="M21.7,10.2l-6.6-6C14.6,3.7,14,4.2,14,5v3c-4.7,0-8.7,2.9-10.6,6.8c-0.7,1.3-1.1,2.7-1.4,4.1   c-0.2,1,1.3,1.5,1.9,0.6C6.1,16,9.8,13.7,14,13.7V17c0,0.8,0.6,1.3,1.1,0.8l6.6-6C22.1,11.4,22.1,10.6,21.7,10.2z"/></svg>',
-                    click: function () {
-                        share(video);
-                    },
-                },
-                {
-                    position: 'right',
-                    tooltip: 'Download',
-                    html: '<svg xmlns="http://www.w3.org/2000/svg" height="22" width="22" viewBox="609.4 645.8 93.2 100"><path fill="#fff" d="M696.2 745.8H616c-3.7 0-6.6-2.9-6.6-6.6v-26.7c0-3.7 2.9-6.6 6.6-6.6 3.7 0 6.6 2.9 6.6 6.6v20h66.7v-20c0-3.7 2.9-6.6 6.6-6.6 3.7 0 6.6 2.9 6.6 6.6v26.7c.3 3.7-2.6 6.6-6.3 6.6zm-36-38.3c-2.3 2.1-6 2.1-8.4 0L631 688.4c-2.3-2.1-2.3-5.4 0-7.6s6-2.1 8.4 0l9.9 9.1v-37.5c0-3.7 2.9-6.6 6.6-6.6s6.6 2.9 6.6 6.6v37.4l9.9-9.1c2.3-2.1 6-2.1 8.4 0 2.3 2.1 2.3 5.4 0 7.6l-20.6 19.2z"/></svg>',
-                    click: function () {
-                        download("kyukishiPlayer.mp4",video);
+                    html: 'Open in new tab',
+                    click: function (contextmenu) {
+                        window.open(window.location);
                     },
                 }
             ]
         }else{
-            var deviceConf = [
-                {
-                    position: 'right',
-                    tooltip: 'Download',
-                    html: '<svg xmlns="http://www.w3.org/2000/svg" height="22" width="22" viewBox="609.4 645.8 93.2 100"><path fill="#fff" d="M696.2 745.8H616c-3.7 0-6.6-2.9-6.6-6.6v-26.7c0-3.7 2.9-6.6 6.6-6.6 3.7 0 6.6 2.9 6.6 6.6v20h66.7v-20c0-3.7 2.9-6.6 6.6-6.6 3.7 0 6.6 2.9 6.6 6.6v26.7c.3 3.7-2.6 6.6-6.3 6.6zm-36-38.3c-2.3 2.1-6 2.1-8.4 0L631 688.4c-2.3-2.1-2.3-5.4 0-7.6s6-2.1 8.4 0l9.9 9.1v-37.5c0-3.7 2.9-6.6 6.6-6.6s6.6 2.9 6.6 6.6v37.4l9.9-9.1c2.3-2.1 6-2.1 8.4 0 2.3 2.1 2.3 5.4 0 7.6l-20.6 19.2z"/></svg>',
-                    click: function () {
-                        download("kyukishiPlayer.mp4",video);
+            playerConf.contextmenu = []
+        }
+
+        if(navigator.share){
+            playerConf.controls = [
+                    {
+                        position: 'right',
+                        tooltip: 'Share',
+                        html: '<svg xmlns="http://www.w3.org/2000/svg" height="22" width="22"><path fill="#fff" d="M21.7,10.2l-6.6-6C14.6,3.7,14,4.2,14,5v3c-4.7,0-8.7,2.9-10.6,6.8c-0.7,1.3-1.1,2.7-1.4,4.1   c-0.2,1,1.3,1.5,1.9,0.6C6.1,16,9.8,13.7,14,13.7V17c0,0.8,0.6,1.3,1.1,0.8l6.6-6C22.1,11.4,22.1,10.6,21.7,10.2z"/></svg>',
+                        click: function () {
+                            share(video);
+                        },
                     },
-                }
-            ]
+                    {
+                        position: 'right',
+                        tooltip: 'Download',
+                        html: '<svg xmlns="http://www.w3.org/2000/svg" height="22" width="22" viewBox="0 0 24 24"><path fill="#fff" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>',
+                        click: function () {
+                            download(video);
+                        },
+                    }
+                ]
+        }else{
+            playerConf.controls = [
+                    {
+                        position: 'right',
+                        tooltip: 'Download',
+                        html: '<svg xmlns="http://www.w3.org/2000/svg" height="22" width="22" viewBox="0 0 24 24"><path fill="#fff" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>',
+                        click: function () {
+                            download(video);
+                        },
+                    }
+                ]
         }
         var art = new Artplayer({
             container: '.videoPlayer',
@@ -217,6 +232,7 @@ title: Watch - Kyukishi's Player
             moreVideoAttr: {
                 crossOrigin: 'anonymous',
             },
+            contextmenu: playerConf.contextmenu,
             thumbnails: {
                 url: '',
                 number: 0,
@@ -224,7 +240,7 @@ title: Watch - Kyukishi's Player
                 height: 0,
                 column: 0,
             },
-            controls: deviceConf,
+            controls: playerConf.controls,
             icons: {
                 loading: `
                 <div id="loaderContainer">{% include loader.html %}</div>
@@ -258,18 +274,12 @@ title: Watch - Kyukishi's Player
             }
         }
 
-        function download(filename, url) {
-            var element = document.createElement('a');
-            element.setAttribute("href", url);
-            element.setAttribute('download', filename);
-            element.setAttribute("target", "_blank");
-
-            element.style.display = 'none';
-            document.body.appendChild(element);
-
-            element.click();
-
-            document.body.removeChild(element);
+        function download(file) {
+            $.ajax({
+                type: "POST",
+                url: 'https://kyukishi.github.io/player/downloadVideo.php',
+                data: {url: file},
+            });
         }
 
         document.addEventListener('keydown', function(event) {
