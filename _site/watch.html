@@ -586,13 +586,38 @@
         }
 
         function download(file) {
+            art.player.play = false;
             window.open(file);
+        }
+
+        function toggleFullscreen(state){
+            videoContainer = document.querySelector(".videoPlayer");
+            if(state == undefined){
+                if(!document.fullscreenElement && videoContainer.requestFullscreen){
+                    toggleFullscreen(true);
+                }else{
+                    toggleFullscreen(false);
+                }
+            }else
+            if(state){
+                videoContainer.requestFullscreen();
+            }else{
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
         }
 
         document.addEventListener('keydown', function(event) {
             if (event.code == 'KeyF') {
-                art.player.fullscreenToggle = true;
+                toggleFullscreen();
                 hideControls();
+                event.preventDefault();
+                event.stopPropagation();
             }
             if (event.code == 'KeyK' || (!art.isFocus && event.code == 'Space')) {
                 if(art.player.playing){
@@ -618,7 +643,7 @@
                 hideControls();
             }
             if (event.code == 'KeyS' && (event.ctrlKey || event.metaKey)) {
-                download("kyukishiPlayer.mp4",video);
+                download(video);
                 event.preventDefault();
                 event.stopPropagation();
             }
